@@ -91,6 +91,17 @@ class User extends Model {
 
 	}
 
+	public function get($iduser) {
+		$sql = new Sql();
+
+		$sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b USING(idperson) where a.iduser = :iduser",
+			array(
+			":iduser"=>$iduser
+			));
+
+		$this->setData($results[0]);
+	}
+
 }
 
 ?>
