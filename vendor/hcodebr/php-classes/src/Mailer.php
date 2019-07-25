@@ -7,11 +7,11 @@ use Rain\Tpl;
 class Mailer {
     
     const NAME_FROM = "Hcode Store";
+    const USERNAME = '';
+    const PASSWORD = '';
     private $mail;
 
     public function __construct($toAddress, $toName, $subject, $tplName, $data = array()) {
-
-        require_once("mailerdata.php");
 
 		$config = array(
 			"tpl_dir"       => $_SERVER["DOCUMENT_ROOT"]."/views/email/",
