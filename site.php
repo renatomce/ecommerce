@@ -253,8 +253,6 @@ $app->post("/checkout", function(){
 
 	$order->save();
 
-	var_dump($order->save());
-
 	switch ((int)$_POST['payment-method']) {
 
 		case 1:
@@ -295,7 +293,6 @@ $app->get("/order/:idorder/pagseguro", function($idorder){
 			'number'=>substr($order->getnrphone(), 2, strlen($order->getnrphone()))
 		]
 	]);
-
 
 });
 
